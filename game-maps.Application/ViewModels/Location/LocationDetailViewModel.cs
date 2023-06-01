@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace game_maps.Application.ViewModels
+namespace game_maps.Application.ViewModels.Location
 {
     public class LocationDetailViewModel : BaseViewModel
     {
@@ -14,7 +14,7 @@ namespace game_maps.Application.ViewModels
         public string? Features { get; set; }
         public string? IgnMarkerId { get; set; }
         public string? IgnPageId { get; set; }
-        public UserLocationMarkViewModel? Marker { get; set; }
+        public bool IsDone { get; set; }
         public ICollection<MediaViewModel>? Medias { get; set; }
     }
 }

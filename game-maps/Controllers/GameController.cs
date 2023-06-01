@@ -20,7 +20,20 @@ namespace game_maps.Controllers
         [HttpGet(nameof(GetGames))]
         public async Task<IActionResult> GetGames()
         {
-            return Ok(await gameService.GetGames());
+            return Ok(await gameService.GetAll());
+        }
+
+        [HttpGet(nameof(GetGame))]
+        public async Task<IActionResult> GetGame(string slug)
+        {
+            try
+            {
+                return Ok(await gameService.Get(slug));
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

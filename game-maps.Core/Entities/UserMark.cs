@@ -13,7 +13,5 @@ namespace game_maps.Core.Entities
         public Guid UserId { get; set; }
         public int LocationId { get; set; }
         public bool IsDone { get; set; }
-        public string Note { get; set; } = "";
-        public DateTime LastEditDate { get; set; }
     }
 }

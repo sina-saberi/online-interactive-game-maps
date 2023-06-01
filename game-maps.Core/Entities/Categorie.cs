@@ -21,6 +21,6 @@ namespace game_maps.Core.Entities
         public bool FeaturesEnabled { get; set; }
         public bool IgnEnabled { get; set; }
         public int GroupId { get; set; }
-        public ICollection<Location>? Locations { get; set; }
+        public ICollection<Location> Locations { get; set; } = new List<Location>();
     }
 }

@@ -14,6 +14,7 @@ namespace game_maps.Infrastructure.EntitieConfigurations
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasMany(x => x.UserMarks).WithOne().HasForeignKey(x => x.UserId);
+            builder.HasMany(x => x.Locations).WithOne().HasForeignKey(x => x.UserId);
         }
     }
 }

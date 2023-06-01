@@ -16,13 +16,18 @@ namespace game_maps.Controllers
             this.service = service;
         }
 
-        [HttpGet(nameof(GetGroupsWithCategoriesByGameSlug))]
-        public async Task<IActionResult> GetGroupsWithCategoriesByGameSlug(string slug)
+        [HttpGet(nameof(GetGroups))]
+        public async Task<IActionResult> GetGroups(string slug)
         {
-            var res = await service.GetGroups(slug);
-            if (res is not null)
+            try
+            {
+                var res = await service.GetAll(slug);
                 return Ok(res);
-            return NotFound();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

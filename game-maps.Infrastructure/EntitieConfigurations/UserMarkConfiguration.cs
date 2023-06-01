@@ -14,9 +14,7 @@ namespace game_maps.Infrastructure.EntitieConfigurations
         public void Configure(EntityTypeBuilder<UserMark> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.LastEditDate).IsRequired();
             builder.Property(x => x.IsDone).IsRequired();
-            builder.Property(x => x.Note).IsRequired(false).HasMaxLength(300);
             builder.Property(x => x.UserId).IsRequired();
             builder.Property(x => x.LocationId).IsRequired();
         }

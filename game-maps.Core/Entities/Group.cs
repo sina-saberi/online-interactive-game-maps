@@ -14,7 +14,6 @@ namespace game_maps.Core.Entities
         public int Order { get; set; }
         public string Color { get; set; } = "";
         public bool Expandable { get; set; }
-        public int GameId { get; set; }
-        public ICollection<Categorie>? Categories { get; set; }
+        public ICollection<Categorie> Categories { get; set; } = new List<Categorie>();
     }
 }

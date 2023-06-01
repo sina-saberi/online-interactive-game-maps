@@ -1,4 +1,4 @@
-﻿using game_maps.Application.ViewModels;
+﻿using game_maps.Application.ViewModels.User;
 using game_maps.Core.Entities;
 using game_maps.Infrastructure.Utility;
 using Microsoft.AspNetCore.Identity;

@@ -1,4 +1,5 @@
 ﻿using game_maps.Core.Base;
+using game_maps.Core.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace game_maps.Core.Entities
         public string? IgnPageId { get; set; }
         public int MapId { get; set; }
         public int? CategorieId { get; set; }
+        public Guid? UserId { get; set; }
+        public LocationType Type { get; set; }
         public ICollection<UserMark>? UserMarks { get; set; }
         public Categorie? Categorie { get; set; }
         public ICollection<Media>? Medias { get; set; }

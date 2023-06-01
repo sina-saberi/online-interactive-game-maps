@@ -20,7 +20,6 @@ namespace game_maps.Infrastructure.EntitieConfigurations
             builder.Property(x => x.Logo).IsRequired().HasMaxLength(200);
 
             builder.HasMany(x => x.Maps).WithOne().HasForeignKey(x => x.GameId);
-            builder.HasMany(x => x.Groups).WithOne().HasForeignKey(x => x.GameId);
         }
     }
 }

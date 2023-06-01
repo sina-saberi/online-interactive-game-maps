@@ -26,7 +26,7 @@ namespace game_maps.Infrastructure.EntitieConfigurations
             builder.Property(x => x.FeaturesEnabled).IsRequired();
             builder.Property(x => x.IgnEnabled).IsRequired();
 
-            builder.HasMany(x => x.Locations).WithOne(x => x.Categorie).HasForeignKey(x => x.CategorieId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasMany(x => x.Locations).WithOne(x => x.Categorie).HasForeignKey(x => x.CategorieId);
         }
     }
 }

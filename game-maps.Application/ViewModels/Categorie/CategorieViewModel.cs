@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace game_maps.Application.ViewModels
+namespace game_maps.Application.ViewModels.Categorie
 {
     public class CategorieViewModel : BaseViewModel
     {
@@ -19,5 +19,6 @@ namespace game_maps.Application.ViewModels
         public bool HasHeatmap { get; set; }
         public bool FeaturesEnabled { get; set; }
         public bool IgnEnabled { get; set; }
+        public int Count { get; set; }
     }
 }

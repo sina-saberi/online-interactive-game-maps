@@ -36,7 +36,7 @@ const Map = () => {
             if (mapDetail) {
                 dispatch(setMapDetailt(mapDetail))
                 if (slug) {
-                    let res = unwrapResult(await dispatch(GetGroupsAndCategories(slug)));
+                    let res = unwrapResult(await dispatch(GetGroupsAndCategories(mapDetail.slug)));
                     setFilters(p => {
                         let obj: { [name: string]: boolean } = {};
                         res.forEach((groups) => {
@@ -65,9 +65,6 @@ const Map = () => {
     React.useEffect(() => {
         GetData();
     }, [GetData]);
-
-
-
 
     return (
         <div className='h-screen'>

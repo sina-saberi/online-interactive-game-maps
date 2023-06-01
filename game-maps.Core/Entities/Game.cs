@@ -16,6 +16,5 @@ namespace game_maps.Core.Entities
         public string Image { get; set; } = "";
         public string Logo { get; set; } = "";
         public ICollection<Map>? Maps { get; set; }
-        public ICollection<Group>? Groups { get; set; } 
     }
 }

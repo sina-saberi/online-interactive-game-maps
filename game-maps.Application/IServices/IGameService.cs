@@ -1,4 +1,4 @@
-﻿using game_maps.Application.ViewModels;
+﻿using game_maps.Application.ViewModels.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,7 @@ namespace game_maps.Application.IServices
 {
     public interface IGameService
     {
-        public Task<IEnumerable<GameViewModel>> GetGames();
+        Task<IEnumerable<GameViewModel>> GetAll();
+        Task<GameViewModel> Get(string slug);
     }
 }

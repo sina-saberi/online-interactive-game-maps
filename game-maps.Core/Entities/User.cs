@@ -11,5 +11,6 @@ namespace game_maps.Core.Entities
     public class User : IdentityUser<Guid>
     {
         public ICollection<UserMark>? UserMarks { get; set; }
+        public ICollection<Location>? Locations { get; set; }
     }
 }

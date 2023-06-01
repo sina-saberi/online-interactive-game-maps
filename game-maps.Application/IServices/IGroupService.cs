@@ -1,4 +1,4 @@
-﻿using game_maps.Application.ViewModels;
+﻿using game_maps.Application.ViewModels.Group;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace game_maps.Application.IServices
 {
     public interface IGroupService
     {
-        public Task<IEnumerable<GroupViewModel>> GetGroups(string slug);
+        public Task<IEnumerable<GroupViewModel>> GetAll(string slug);
     }
 }

@@ -5,13 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace game_maps.Application.ViewModels
+namespace game_maps.Application.ViewModels.Location
 {
     public class UserLocationMarkViewModel : BaseViewModel
     {
         public bool IsDone { get; set; }
-        public string Note { get; set; } = "";
-        public int? Id { get; set; }
         public int LocationId { get; set; }
     }
 }

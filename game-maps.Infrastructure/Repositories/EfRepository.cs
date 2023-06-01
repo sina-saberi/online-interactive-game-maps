@@ -40,20 +40,28 @@ namespace game_maps.Infrastructure.Repositories
             var res = await context.Set<T>().Include(include).FirstOrDefaultAsync(condition, cancellationToken);
             return res!;
         }
-        public async Task<List<T>> WhereAsync(Expression<Func<T, bool>> condition, Expression<Func<T, object>> includes, CancellationToken cancellationToken = default)
-        {
-            var res = await context.Set<T>().Where(condition).Include(includes).ToListAsync();
-            return res;
-        }
         public async Task<List<T>> WhereAsync(Expression<Func<T, bool>> condition, CancellationToken cancellationToken = default)
         {
             var res = await context.Set<T>().Where(condition).ToListAsync();
             return res;
         }
-        public async Task<T> SingleAsync(Expression<Func<T, bool>> condition, Expression<Func<T, object>> include, CancellationToken cancellationToken = default)
+        public async Task<List<T>> WhereAsync(Expression<Func<T, bool>> condition, params Expression<Func<T, object>>[] includes)
         {
-            var res = await context.Set<T>().Include(include).SingleAsync(condition, cancellationToken);
-            return res!;
+            var res = context.Set<T>().Where(condition);
+            foreach (var item in includes)
+            {
+                res = res.Include(item);
+            }
+            return await res.ToListAsync();
+        }
+        public async Task<T> SingleAsync(Expression<Func<T, bool>> condition, params Expression<Func<T, object>>[] includes)
+        {
+            var res = context.Set<T>().AsQueryable();
+            foreach (var item in includes)
+            {
+                res = res.Include(item);
+            }
+            return await res.SingleAsync(condition);
         }
         public async Task<T> SingleAsync(Expression<Func<T, bool>> condition, CancellationToken cancellationToken = default)
         {

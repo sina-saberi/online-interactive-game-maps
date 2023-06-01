@@ -1,4 +1,5 @@
 ﻿using game_maps.Core.Entities;
+using game_maps.Core.Types;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -23,6 +24,8 @@ namespace game_maps.Infrastructure.EntitieConfigurations
             builder.Property(x => x.IgnPageId).HasMaxLength(150);
             builder.Property(x => x.IgnMarkerId).HasMaxLength(150);
             builder.Property(x => x.CategorieId).IsRequired(false);
+            builder.Property(x => x.Type).HasDefaultValue(LocationType.Location);
+            builder.Property(x => x.UserId).IsRequired(false);
 
             builder.HasMany(x => x.Medias).WithOne().HasForeignKey(x => x.LocationId);
             builder.HasMany(x => x.UserMarks).WithOne().HasForeignKey(x => x.LocationId);

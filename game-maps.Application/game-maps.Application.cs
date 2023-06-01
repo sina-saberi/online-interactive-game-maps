@@ -24,6 +24,7 @@ namespace game_maps.Application
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IMapService, MapService>();
             services.AddScoped<IGroupService, GroupService>();
+            services.AddScoped<ILocationService, LocationService>();
         }
     }
 }
